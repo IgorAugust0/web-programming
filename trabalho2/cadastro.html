@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar</title>
+</head>
+
+<body>
+    <header>
+        <h1>Cadastro na ABC Health</h1>
+    </header>
+    <form action="cadastraCliente.php" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" minlength="2" maxlength="50" placeholder="Seu Nome" required
+                    autofocus>
+            </div>
+            <br>
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <br>
+            <div>
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                    title="Digite um CPF no formato: xxx.xxx.xxx-xx" required>
+            </div>
+            <br>
+            <div>
+                <label for="idade">Idade:</label>
+                <input type="number" name="idade" id="idade" required>
+            </div>
+            <br>
+            <div>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" name="telefone" id="telefone" required>
+            </div>
+            <br>
+            <div>
+                <label for="dataNascimento">Data de Nacimento:</label>
+                <input type="date" name="dataNascimento" id="dataNascimento">
+            </div>
+            <br>
+            <div>
+                <label for="sexo">Sexo:</label>
+                <select name="sexo" id="sexo">
+                    <option value="">--</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="naobinario">Não binário</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="especie">Espécie:</label>
+                <input type="text" name="especie" id="especie" value="Humano" readonly>
+            </div>
+            <br>
+            <fieldset>
+                <legend>Estado Civil:</legend>
+                <div>
+                    <label for="solteiro">Solteiro(a)</label>
+                    <input type="radio" name="estadocivil" id="solteiro">
+                </div>
+                <div>
+                    <label for="casado">Casado(a)</label>
+                    <input type="radio" name="estadocivil" id="casado">
+                </div>
+                <div>
+                    <label for="divorciado">Divorciado(a)</label>
+                    <input type="radio" name="estadocivil" id="divorciado">
+                </div>
+                <div>
+                    <label for="viuvo">Viúvo(a)</label>
+                    <input type="radio" name="estadocivil" id="viuvo">
+                </div>
+                <div>
+                    <label for="separado">Separado(a)</label>
+                    <input type="radio" name="estadocivil" id="separado">
+                </div>
+            </fieldset>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Endereço</legend>
+            <div>
+                <label for="cep">CEP:</label>
+                <input type="text" name="cep" id="cep" pattern="\d{5}-?\d{3}" required>
+            </div>
+            <br>
+            <div>
+                <label for="tipoLogradouro">Selecione o tipo de logradouro:</label>
+                <select name="tipoLogradouro" id="tipoLogradouro">
+                    <option value="">--</option>
+                    <option value="rua">Rua</option>
+                    <option value="avenida">Avenida</option>
+                    <option value="alameda">Alameda</option>
+                    <option value="estrada">Estrada</option>
+                    <option value="praça">Praca</option>
+                    <option value="travessa">Travessa</option>
+                    <option value="viela">Viela</option>
+                    <option value="rodovia">Rodovia</option>
+                    <option value="passarela">Passarela</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="logradouro">Logradouro:</label>
+                <input type="text" name="logradouro" id="logradouro" required>
+            </div>
+            <br>
+            <div>
+                <label for="bairro">Bairro</label>
+                <input type="text" name="bairro" id="bairro" required>
+            </div>
+            <br>
+            <div>
+                <label for="cidade">Cidade:</label>
+                <input type="text" name="cidade" id="cidade" required>
+            </div>
+            <br>
+            <div>
+                <label for="pais">País:</label>
+                <input type="text" name="pais" id="pais" placeholder="Brasil" readonly>
+            </div>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Informações Adicionais</legend>
+            <br>
+            <fieldset>
+                <legend>Interesses:</legend>
+                <div>
+                    <label for="filmes">Filmes</label>
+                    <input type="checkbox" name="interesses" id="filmes">
+                </div>
+                <div>
+                    <label for="series">Séries</label>
+                    <input type="checkbox" name="interesses" id="series">
+                </div>
+                <div>
+                    <label for="games">Games</label>
+                    <input type="checkbox" name="interesses" id="games">
+                </div>
+                <div>
+                    <label for="livros">Livros</label>
+                    <input type="checkbox" name="interesses" id="livros">
+                </div>
+                <div>
+                    <label for="roupas">Roupas</label>
+                    <input type="checkbox" name="interesses" id="roupas">
+                </div>
+                <div>
+                    <label for="outros">Outros</label>
+                    <input type="checkbox" name="interesses" id="outros">
+                </div>
+                <div>
+                    <label for="nenhum">Nenhum</label>
+                    <input type="checkbox" name="interesses" id="nenhum" checked>
+                </div>
+            </fieldset>
+            <br>
+            <div>
+                <span>Informações Complementares (opcional):</span>
+                <br>
+                <textarea name="infocomplementar" id="infocomplementar" cols="30" rows="10" maxlength="1000"></textarea>
+            </div>
+            <br>
+            <div>
+                <label for="arquivo">Anexe um arquivo (opcional):</label>
+                <input type="file" accept="image/*" name="arquivo" id="arquivo">
+            </div>
+
+        </fieldset>
+        <input type="hidden" id="postId" name="postId" value="34657">
+
+        <br>
+
+        <button type="reset">Limpar</button>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+
+</html>
