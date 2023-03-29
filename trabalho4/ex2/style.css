@@ -1,0 +1,50 @@
+body {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  margin: 0;
+  text-align: center;
+  background-color: lightgray;
+}
+
+main {
+  background-color: white;
+  color: #333;
+
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 40px 50px;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  text-align: left;
+}
+
+input[type="email"],
+input[type="password"],
+button[type="submit"] {
+  width: 100%;
+  padding: 10px 0 10px 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  box-sizing: border-box;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+button[type="submit"]:focus {
+  border: 0.5px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}

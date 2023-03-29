@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <main>
+        <form action="cadastraCliente.php" method="post" enctype="multipart/form-data">
+
+            <div>
+                <label for="logusuario">Usuário:</label>
+                <input type="email" name="logusuario" id="logusuario" placeholder="Seu usuário" autofocus required>
+            </div>
+            <br>
+            <div>
+                <label for="logsenha">Senha:</label>
+                <input type="password" name="logsenha" id="logsenha" placeholder="Sua senha" required>
+            </div>
+            <input type="hidden" id="postId" name="postId" value="34657">
+
+            <br>
+            <button type="submit">Entrar</button>
+        </form>
+    </main>
+</body>
+
+</html>
