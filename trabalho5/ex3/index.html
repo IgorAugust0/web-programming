@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    <title>ex03</title>
+</head>
+
+<body>
+    <main>
+        <div id="caixa-de-msg">
+            <p id="msg"></p>
+            <button id="fecha-btn" onclick="hideMessage()">Ok</button>
+        </div>
+        <div class="btn">
+            <input type="text" name="msg-teste" id="msg-teste" placeholder="Insira uma mensagem..." minlength="2"
+                maxlength="50">
+            <button onclick="showMessage(document.getElementById('msg-teste').value)">Exibir</button>
+        </div>
+        <div class="btn">
+            <button onclick="showMessage('Essa é uma mensagem de teste')">Exibir mensagem de teste</button>
+        </div>
+    </main>
+</body>
+
+</html>
