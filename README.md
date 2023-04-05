@@ -26,7 +26,7 @@ Repositório com arquivos da disciplina de Programação para Internet (PPI) do 
 | 06 | JavaScript e DOM  | Parte 2  |
 
 
-## Autores
+## Autor
 
 - [@IgorAugust0](https://github.com/IgorAugust0)
 
