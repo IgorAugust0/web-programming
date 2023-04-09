@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contato</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/contato-style.css">
+    <script src="./js/contato-script.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="login">
+            <h2>Contato</h2>
+            <form name="formCadastro" action="registraContato.php" method="post">
+                <div>
+                    <label for="usuario">Usuário</label>
+                    <input type="text" id="usuario" name="usuario" autocomplete="off" placeholder="Seu usuário"
+                        autofocus title="Seu nome de usuário deve conter pelo menos 6 caracteres">
+                    <span></span>
+                </div>
+                <div hidden> <!-- caso queria ativar o campo, basta tirar o hidden e descomentar sua seção no arquivo js -->
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Sua senha"
+                        title="Sua senha deve ter pelo menos 6 caracteres">
+                    <span></span>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="off" placeholder="Seu email"
+                        title="Seu email deve conter o @">
+                    <span></span>
+                </div>
+                <div>
+                    <label for="mensagem">Mensagem</label>
+                    <br>
+                    <textarea name="mensagem" id="mensagem" cols="30" rows="10"
+                        maxlength="1000"></textarea>
+                    <span></span>
+                </div>
+                <button>Cadastrar</button>
+            </form>
+        </div>
+    </main>
+
+</body>
+
+</html>

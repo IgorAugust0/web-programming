@@ -1,0 +1,61 @@
+body {
+  background-image: url("../images/background.png");
+  background-size: cover;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  width: 100%;
+  margin: 0 auto;
+  color: black;
+}
+
+main {
+  background-color: white;
+  width: 25%;
+  text-align: left;
+  vertical-align: middle;
+  padding: 20px;
+  margin: auto;
+  border: 2px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #888;
+  box-shadow: 0 0 10px #888;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input {
+  padding: 8px;
+  margin: 10px 0px;
+  border: 0.5px solid #888;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+input:focus {
+  border: 0.5px solid #888;
+  box-shadow: 0 0 10px #888;
+  outline: none;
+}
+
+textarea {
+  padding: 8px;
+  margin: 10px 0px;
+  border: 0.5px solid #888;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+button {
+  margin: 20px 0px 0px;
+}
+
+span {
+  color: red;
+}
+
+

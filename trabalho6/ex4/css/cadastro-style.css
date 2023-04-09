@@ -1,0 +1,129 @@
+form {
+  margin: 20px;
+}
+
+fieldset {
+  border: none;
+}
+
+.field-radio div {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+}
+
+.field-checkbox div {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+}
+
+.legenda {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: large;
+  color: mediumblue;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+legend {
+  font-weight: 500;
+  margin-bottom: 10px;
+  
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+input[type="password"],
+select {
+  display: block;
+  width: 40%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+input[type="radio"] {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+textarea {
+  height: 100px;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  background-color: #333;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+button[type="reset"] {
+  background-color: #333;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+form button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+form button[type="reset"]:hover {
+  background-color: #da190b;
+}
+
+#arq {
+  background-color: #333;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  width: 9%;
+}
+
+@media (max-width: 600px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="date"],
+  select {
+    width: auto;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+

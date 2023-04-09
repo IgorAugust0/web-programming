@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Trabalhos PPI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+            background-color: grey;
+            font-size: 1.2em;
+            top: 0;
+            left: 0;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 1em;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        nav ul::before,
+        nav ul::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        nav li {
+            float: left;
+            margin: 0 1em;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: capitalize;
+        }
+
+        nav li:hover {
+            background-color: #fff;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color: #333;
+        }
+
+        @media screen and (min-width: 600px) {
+            nav ul {
+                padding: 0;
+                margin: 0;
+                display: inline-block;
+                background-color: transparent;
+            }
+
+            nav li {
+                float: left;
+                margin: 0 1em;
+            }
+
+            nav .menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="./trabalho1/">trab01</a></li>
+            <li><a href="./trabalho2/">trab02</a></li>
+            <li><a href="./trabalho3/">trab03</a></li>
+            <li><a href="./trabalho4/">trab04</a></li>
+            <li><a href="./trabalho5/">trab05</a></li>
+            <li><a href="./trabalho6/">trab06</a></li>
+        </ul>
+
+    </nav>
+</body>
+
+</html>
