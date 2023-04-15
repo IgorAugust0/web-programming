@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <form class="row g-3" action="ex1.php" method="post">
+      <div class="col-9">
+        <div class="mb-3 mt-4">
+          <label for="nome" class="form-label">Nome completo</label>
+          <input type="text" class="form-control" id="nome" name="fieldNome" required>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="mb-3 mt-4">
+          <label for="cpf" class="form-label">CPF</label>
+          <input type="text" class="form-control" name="fieldCPF" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+            title="Digite um CPF no formato: xxx.xxx.xxx-xx" required>
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <div class="mb-3">
+          <label for="e-mail" class="form-label">E-mail</label>
+          <input type="email" class="form-control" name="fieldEmail" id="e-mail" required>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="mb-3">
+          <label for="senha" class="form-label">Senha</label>
+          <input type="password" class="form-control" name="fieldSenha" id="senha" required>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="mb-3">
+          <label for="cep" class="form-label">CEP:</label>
+          <input type="text" class="form-control" name="fieldCEP" id="cep" pattern="\d{5}-?\d{3}" required>
+        </div>
+      </div>
+      <div class="col-sm-10">
+        <div class="mb-3">
+          <label for="endereco" class="form-label">Endereço</label>
+          <input type="text" class="form-control" name="fieldEndereco" id="endereco"
+            placeholder="Avenida João Naves de Ávila" required>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="mb-3">
+          <label for="bairro" class="form-label">Bairro:</label>
+          <input type="text" class="form-control" name="fieldBairro" id="bairro" required>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="mb-3">
+          <label for="cidade" class="form-label">Cidade</label>
+          <input type="text" class="form-control" name="fieldCidade" id="cidade" required>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="mb-3">
+          <label for="estado" class="form-label">Estado</label>
+          <select class="form-select" name="selectEstado" id="estado" required>
+            <option value="">Selecione</option>
+            <!--Coloquei os estados em um script simples em formato minify no final do html, para dixar o código mais enxuto-->
+          </select>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="mb-2">
+          <div class="form-check">
+            <label for="termos" class="form-check-label">Concordo com os termos</label>
+            <input type="checkbox" class="form-check-input" id="termos" required>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary"><span class="bi bi-plus-lg"></span> Cadastrar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
+  <!-- <script>const options = ["Acre", "Alagoas", "Amapá", "Amazonas", "Bahia", "Ceará", "Distrito Federal", "Espírito Santo", "Goiás", "Maranhão", "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais", "Pará", "Paraíba", "Paraná", "Pernambuco", "Piauí", "Rio de Janeiro", "Rio Grande do Norte", "Rio Grande do Sul", "Rondônia", "Roraima", "Santa Catarina", "São Paulo", "Sergipe", "Tocantins",]; const select = document.getElementById("estado"); options.forEach((optn) => { const option = document.createElement("option"); option.value = optn; option.text = optn; select.add(option); });</script> -->
+</body>
+
+</html>
