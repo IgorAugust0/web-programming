@@ -1,98 +1,92 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Trabalhos PPI</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-            background-color: grey;
-            font-size: 1.2em;
-            top: 0;
-            left: 0;
-        }
-
-        nav {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 1em;
-            margin: 0 auto;
-            max-width: 800px;
-        }
-
-        nav ul::before,
-        nav ul::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        nav li {
-            float: left;
-            margin: 0 1em;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: capitalize;
-        }
-
-        nav li:hover {
-            background-color: #fff;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-            color: #333;
-        }
-
-        @media screen and (min-width: 600px) {
-            nav ul {
-                padding: 0;
-                margin: 0;
-                display: inline-block;
-                background-color: transparent;
-            }
-
-            nav li {
-                float: left;
-                margin: 0 1em;
-            }
-
-            nav .menu {
-                display: none;
-            }
-        }
-    </style>
+    <meta name="description" content="ppi">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
-<body>
-    <nav>
-        <ul>
-            <li><a href="./trabalho1/">trab01</a></li>
-            <li><a href="./trabalho2/">trab02</a></li>
-            <li><a href="./trabalho3/">trab03</a></li>
-            <li><a href="./trabalho4/">trab04</a></li>
-            <li><a href="./trabalho5/">trab05</a></li>
-            <li><a href="./trabalho6/">trab06</a></li>
-            <li><a href="./trabalho7/">trab07</a></li>
-        </ul>
-
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
+    <nav class="navbar navbar-light navbar-expand-md fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="#">PPI</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item nav-link"><a class="nav-link active" href="#trabalhos">trabalhos</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="#download">sobre</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="#contact">contato</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
+    <header class="masthead" style="background-image: url('assets/img/intro-bg.jpg');">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="brand-heading">trabalhos</h1>
+                        <p class="intro-text">Site simples para redirecionar aos trabalhos.</p><a class="btn btn-link btn-circle" role="button" href="#trabalhos"><i class="fa fa-angle-double-down animated"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="text-center content-section" id="trabalhos">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>Trabalhos</h2>
+                    <ul class="list-inline banner-social-buttons">
+                        <li class="list-inline-item list-inline-item"><a class="btn btn-primary btn-lg btn-default" role="button" href="./trabalho1/">&nbsp;<i class="fa-solid fa-1"></i><span class="network-name">&nbsp;</span></a></li>
+                        <li class="list-inline-item list-inline-item"><a class="btn btn-primary btn-lg btn-default" role="button" href="./trabalho2/">&nbsp;<i class="fa-solid fa-2"></i><span class="network-name">&nbsp;</span></a></li>
+                        <li class="list-inline-item list-inline-item"><a class="btn btn-primary btn-lg btn-default" role="button" href="./trabalho3/">&nbsp;<i class="fa-solid fa-3"></i><span class="network-name">&nbsp;</span></a></li>
+                        <li class="list-inline-item list-inline-item"><a class="btn btn-primary btn-lg btn-default" role="button" href="./trabalho4/">&nbsp;<i class="fa-solid fa-4"></i><span class="network-name">&nbsp;</span></a></li>
+                        <li class="list-inline-item list-inline-item"><a class="btn btn-primary btn-lg btn-default" role="button" href="./trabalho5/">&nbsp;<i class="fa-solid fa-5"></i><span class="network-name">&nbsp;</span></a></li>                        
+                        <li class="list-inline-item list-inline-item"><a class="btn btn-primary btn-lg btn-default" role="button" href="./trabalho6/">&nbsp;<i class="fa-solid fa-6"></i><span class="network-name">&nbsp;</span></a></li>
+                        <li class="list-inline-item list-inline-item"><a class="btn btn-primary btn-lg btn-default" role="button" href="./trabalho7/">&nbsp;<i class="fa-solid fa-7"></i><span class="network-name">&nbsp;</span></a></li>                    
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="text-center download-section content-section" id="download" style="background-image: url('assets/img/downloads-bg.jpg');">
+        <div class="container">
+            <div class="col-lg-8 mx-auto">
+                <h2>Sobre</h2>
+                <p>Esse site é uma adaptação do &nbsp;<a href="https://startbootstrap.com/previews/grayscale">Grayscale</a>, um template de código aberto gratuito do Bootstrap</p>
+            </div>
+        </div>
+    </section>
+    <section class="text-center content-section" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>Contato</h2>
+                    <p>Entre em contato em uma das minhas redes sociais abaixo</p>
+                    <ul class="list-inline banner-social-buttons">
+                        <li class="list-inline-item list-inline-item"><a class="btn btn-primary btn-lg btn-default" role="button" href="https://github.com/IgorAugust0"><i class="fa-brands fa-github"></i><span class="network-name">&nbsp; github</span></a></li>
+                        <li class="list-inline-item list-inline-item"><a class="btn btn-primary btn-lg btn-default" role="button" href="#"><i class="fa-brands fa-instagram"></i><span class="network-name">&nbsp; instagram</span></a></li>
+                        <li class="list-inline-item list-inline-item"><a class="btn btn-primary btn-lg btn-default" role="button" href="#"><i class="fa-brands fa-twitter"></i><span class="network-name">&nbsp; twitter</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <div class="map-clean"><iframe allowfullscreen="" frameborder="0" src="https://cdn.bootstrapstudio.io/placeholders/map.html" width="100%" height="450"></iframe></div> -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright ©&nbsp;PPI 2023</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        !function(){"use strict";var e=document.querySelector("#mainNav");if(e){var a=e.querySelector(".navbar-collapse");if(a){var r=new bootstrap.Collapse(a,{toggle:!1}),n=a.querySelectorAll("a");for(var o of n)o.addEventListener("click",function(e){r.hide()})}var t=function(){(void 0!==window.pageYOffset?window.pageYOffset:(document.documentElement||document.body.parentNode||document.body).scrollTop)>100?e.classList.add("navbar-shrink"):e.classList.remove("navbar-shrink")};t(),document.addEventListener("scroll",t)}}();
+    </script>
 </body>
 
 </html>
