@@ -1,11 +1,12 @@
 <?php
 
 // Credenciais de conexão com o banco de dados
-$servername = "localhost";
-$username = "seu_usuario";
-$password = "sua_senha";
-$dbname = "nome_do_banco_de_dados";
+$servername = "sql203.epizy.com";
+$username = "epiz_33710554";
+$password = "CSikm7lRTrMf";
+$dbname = "epiz_33710554_ppi";
 
+$conn = null;
 try {
     // Conexão com o banco de dados
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -56,6 +57,8 @@ try {
     // Confirmar a transação
     $conn->commit();
     echo "Cadastro realizado com sucesso!";
+    header("Location: listaClientes.php");
+    exit;
 } catch (PDOException $e) {
     // Caso ocorra algum erro, desfazer a transação
     $conn->rollBack();
@@ -63,4 +66,6 @@ try {
 }
 
 // Fechando a conexão com o banco de dados
-$conn = null;
+if ($conn !== null) {
+    $conn = null;
+}
