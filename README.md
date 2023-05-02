@@ -12,6 +12,7 @@ Repositório com arquivos da disciplina de Programação para Internet (PPI) do 
  - [Trabalho 05](https://github.com/IgorAugust0/PPI/tree/main/trabalho5)
  - [Trabalho 06](https://github.com/IgorAugust0/PPI/tree/main/trabalho6)
  - [Trabalho 07](https://github.com/IgorAugust0/PPI/tree/main/trabalho7)
+ - [Trabalho 08](https://github.com/IgorAugust0/PPI/tree/main/trabalho8)
  
 
 
@@ -26,7 +27,8 @@ Repositório com arquivos da disciplina de Programação para Internet (PPI) do 
 | 04 | CSS  | Parte 2  |
 | 05 | JavaScript e DOM  | Parte 1  |
 | 06 | JavaScript e DOM  | Parte 2  |
-| 07 | Bootstrap e Responsividade |   |
+| 07 | Bootstrap e Responsividade | Frameworks e diferentes tamahos de telas |
+| 08 |  Php com MySQL |  Desenvolvimento Web com Banco de Dados |
 
 
 ## Autor
