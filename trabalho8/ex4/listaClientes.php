@@ -113,3 +113,6 @@ try {
         </table>
         <a href="./index.html" class="btn btn-primary">Voltar</a>
     </div>
+</body>
+
+</html>
