@@ -54,9 +54,8 @@ try {
 
     // Confirmar a transação
     $conn->commit();
-    echo "Cadastro realizado com sucesso!";
     header("location: listaClientes.php");
-    exit();
+    exit("Cadastro realizado com sucesso!");
 } catch (PDOException $e) {
     // Caso ocorra algum erro, desfazer a transação
     $conn->rollBack();
