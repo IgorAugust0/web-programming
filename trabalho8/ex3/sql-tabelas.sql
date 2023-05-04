@@ -5,6 +5,6 @@ CREATE TABLE Contato (
     Mensagem TEXT NOT NULL
 ) ENGINE = InnoDB;
 INSERT INTO Contato
-VALUES ("Fulano", "exemplo@abc.com", "Olá, mundo!");
+VALUES (123456, "Fulano", "exemplo@abc.com", "Olá, mundo!");
 INSERT INTO Contato
-VALUES ("Ciclano", "teste@cba.net", "Olá, Terra!");
+VALUES (654321, "Ciclano", "teste@cba.net", "Olá, Terra!");
