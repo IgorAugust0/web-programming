@@ -33,7 +33,6 @@ try {
     VALUES (?, ?, ?, ?, ?, ?)
     SQL;
 
-    // try
     // Iniciando uma transação
     $conn->beginTransaction();
 
@@ -61,10 +60,8 @@ try {
     $conn->rollBack();
     $errorInfo = $e->errorInfo ?? null;
     if ($errorInfo !== null && $errorInfo[1] === 1062) {
-        // echo "Erro: CPF já cadastrado!";
         exit('Dados duplicados: ' . ($errorInfo[2] ?? ''));
     } else {
-        // echo "Erro: " . $e->getMessage();
         exit('Falha ao cadastrar os dados: ' . $e->getMessage());
     }
 } finally {
