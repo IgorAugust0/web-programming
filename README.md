@@ -2,23 +2,19 @@
 
 Repositório com arquivos da disciplina de Programação para Internet (PPI) do curso de Sistemas de Informações da Universidade Federal de Uberlândia (UFU).
 
-
 ## Labs
 
- - [Trabalho 01](https://github.com/IgorAugust0/PPI/tree/main/trabalho1)
- - [Trabalho 02](https://github.com/IgorAugust0/PPI/tree/main/trabalho2)
- - [Trabalho 03](https://github.com/IgorAugust0/PPI/tree/main/trabalho3)
- - [Trabalho 04](https://github.com/IgorAugust0/PPI/tree/main/trabalho4)
- - [Trabalho 05](https://github.com/IgorAugust0/PPI/tree/main/trabalho5)
- - [Trabalho 06](https://github.com/IgorAugust0/PPI/tree/main/trabalho6)
- - [Trabalho 07](https://github.com/IgorAugust0/PPI/tree/main/trabalho7)
- - [Trabalho 08](https://github.com/IgorAugust0/PPI/tree/main/trabalho8)
- - [Trabalho 09](https://github.com/IgorAugust0/PPI/tree/main/trabalho9)
- 
-
+- [Trabalho 01](https://github.com/IgorAugust0/PPI/tree/main/trabalho1)
+- [Trabalho 02](https://github.com/IgorAugust0/PPI/tree/main/trabalho2)
+- [Trabalho 03](https://github.com/IgorAugust0/PPI/tree/main/trabalho3)
+- [Trabalho 04](https://github.com/IgorAugust0/PPI/tree/main/trabalho4)
+- [Trabalho 05](https://github.com/IgorAugust0/PPI/tree/main/trabalho5)
+- [Trabalho 06](https://github.com/IgorAugust0/PPI/tree/main/trabalho6)
+- [Trabalho 07](https://github.com/IgorAugust0/PPI/tree/main/trabalho7)
+- [Trabalho 08](https://github.com/IgorAugust0/PPI/tree/main/trabalho8)
+- [Trabalho 09](https://github.com/IgorAugust0/PPI/tree/main/trabalho9)
 
 ## Conteúdo dos Labs
-
 
 | Trabalho   | Conteúdo |  Descrição |
 | :---------- | :--------- |  :--------- |
@@ -31,7 +27,6 @@ Repositório com arquivos da disciplina de Programação para Internet (PPI) do 
 | 07 | Bootstrap e Responsividade | Frameworks e diferentes tamahos de telas |
 | 08 |  Php com MySQL |  Desenvolvimento Web com Banco de Dados |
 | 09 |  Ajax - XHR |  Requisições Assíncronas com o XMLHttpRequest |
-
 
 ## Autor
 
