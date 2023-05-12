@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <title>Exercício 1</title>
+  <style>
+    .justifica {
+      text-align: justify;
+    }
+
+    .code,
+    code {
+      background: rgba(135, 131, 120, 0.15);
+      border-radius: 3px;
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+      font-size: 85%;
+      tab-size: 2;
+    }
+
+    .code {
+      padding: 1.5em 1em;
+    }
+
+    .code-wrap {
+      word-break: break-all;
+    }
+
+    .code>code {
+      background: none;
+      padding: 0;
+      font-size: 100%;
+      color: inherit;
+    }
+
+    code {
+      color: #eb5757;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container py-4">
+    <div class="row">
+      <h1 class="mb-4 text-center">Exercício 1</h1>
+      <p class="col-md-8 offset-md-2">Nessa página HTML simples eu descrevo, de forma sucinta, as principais
+        funcionalidades de cada <a
+          href="http://www.furtado.prof.ufu.br/site/teaching/PPI/Exemplos-Ajax-XHR.zip">exemplo</a>.</p>
+    </div>
+    <hr>
+    <!-- Explicação do Ex1-hello-->
+    <section class="row justifica">
+      <div class="col-md-8 offset-md-2 mt-2">
+        <h2 class="mb-3">Ex1-hello-ajax</h2>
+        <p>
+          O primeiro bloco de código é um documento HTML que define a estrutura e o estilo da página. A seção
+          <code>&lt;head&gt;</code> contém informações sobre a codificação de caracteres, o título da página e a folha
+          de estilo usada para formatar o conteúdo. A seção <code>&lt;body&gt;</code> contém o conteúdo principal da
+          página, incluindo um cabeçalho, dois parágrafos e um botão.
+        </p>
+        <p>
+          O botão é criado dentro de um elemento
+          <code>&lt;div&gt;</code> com o <code>id</code> &quot;divDemo&quot;. Quando o botão é clicado, o script
+          <code>loadExtraContent</code> é executado. Esse script cria uma nova instância do objeto
+          <code>XMLHttpRequest</code> e define um evento <code>onload</code> que é acionado quando a resposta é
+          recebida do servidor. Esse evento atualiza o conteúdo do elemento <code>&lt;div&gt;</code> com a
+          resposta recebida.
+        </p>
+        <pre class="code code-wrap"><code>&lt;div id=&quot;divDemo&quot;&gt;
+  &lt;button type=&quot;button&quot;&gt;Clique para carregar mais conteúdo com Ajax&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  function loadExtraContent() {
+    let xhr = new XMLHttpRequest();
+    xhr.open(&quot;GET&quot;, &quot;conteudoAdicional.html&quot;, true);
+
+    xhr.onload = function () {
+      document.getElementById(&quot;divDemo&quot;).innerHTML = xhr.responseText;
+    };
+
+    xhr.onerror = function () {
+      console.log(&quot;Erro de rede - requisição não finalizada&quot;);
+    };
+
+    xhr.send();
+  }
+
+  const button = document.querySelector(&quot;#divDemo &gt; button&quot;);
+  button.addEventListener(&quot;click&quot;, loadExtraContent);
+&lt;/script&gt;</code></pre>
+        <p>O segundo bloco de código é o conteúdo adicional que é
+          carregado dinamicamente quando o botão é clicado. Este conteúdo inclui informações sobre os cursos de
+          graduação e pós-graduação oferecidos pela Faculdade de Computação da UFU, além de informações de
+          contato. Ele é carregado a partir de um arquivo HTML externo chamado &quot;conteudoAdicional.html&quot;.
+        </p>
+        <pre class="code code-wrap"><code>&lt;hr&gt;
+&lt;h2&gt;Hello Ajax!&lt;/h2&gt;
+&lt;p&gt;Este conteúdo acabou de ser buscado no servidor e inserido dinamicamente na página com Ajax!&lt;/p&gt;
+
+&lt;h2&gt;Cursos de Graduação&lt;/h2&gt;
+&lt;p&gt;A FACOM oferece os cursos de Bacharelado em Ciência da Computação, em Uberlândia, e Bacharelado 
+em Sistemas de Informação, em Uberlândia e Monte Carmelo.&lt;/p&gt;
+
+&lt;h2&gt;Cursos de Pós-Graduação&lt;/h2&gt;
+&lt;p&gt;A &lt;abbr title=&quot;Faculdade de Computação&quot;&gt;FACOM&lt;/abbr&gt; oferece também os cursos de 
+Mestrado Acadêmico e Doutorado em Ciência da Computação.&lt;/p&gt;
+
+&lt;address&gt;
+  Campus Santa Mônica, Bloco 1A
+
+  Av. João Naves de Ávila, 2121, Bairro Santa Mônica
+
+  Uberlândia, MG
+
+  CEP 38400-902
+&lt;/address&gt;</code></pre>
+
+        <p>Quando o botão é clicado, o script
+          <code>loadExtraContent</code> é executado e faz uma solicitação GET para o arquivo
+          &quot;conteudoAdicional.html&quot;. Se a solicitação for bem-sucedida, a resposta do servidor é inserida
+          no elemento <code>&lt;div&gt;</code> com o <code>id</code> &quot;divDemo&quot;. Se ocorrer um erro, uma
+          mensagem de erro é registrada no console do navegador.
+        </p>
+        <p>Os dois blocos de código trabalham juntos para criar
+          uma experiência de usuário mais dinâmica, permitindo que o conteúdo adicional seja carregado
+          dinamicamente em resposta às ações do usuário. Isso pode melhorar a usabilidade e a acessibilidade da
+          página, reduzindo a quantidade de conteúdo desnecessário que é carregado inicialmente e permitindo que o
+          usuário acesse informações adicionais quando necessário.</p>
+        <p>
+        </p>
+        <p><strong>Resultados das sugestões de testes</strong>
+        </p>
+        <ol>
+          <li>Ao escolher a opção &quot;sem conexão&quot; no ambiente de desenvolvimento do navegador (F12), o
+            carregamento de conteúdo adicional não será bem-sucedido e uma mensagem de erro será registrada no
+            console do navegador.
+          </li>
+          <br>
+          <li>
+            Se a URL &quot;http://hostinexistente.com/conteudoAdicional.html&quot;
+            for usada em vez de &quot;conteudoAdicional.html&quot; em
+            <code>xhr.open(&quot;GET&quot;, &quot;conteudoAdicional.html&quot;, true);</code>, a solicitação GET
+            falhará porque o servidor não será encontrado. O evento <code>onerror</code> será acionado e a
+            mensagem &quot;Erro de rede - requisição não finalizada&quot; será registrada no console do
+            navegador. O conteúdo adicional não será carregado e o usuário não verá nenhuma mudança na página.
+          </li>
+        </ol>
+      </div>
+    </section>
+    <hr>
+    <!-- Explicação do Ex2-busca-cidade-->
+    <section class="row justifica">
+      <div class="col-md-8 offset-md-2 mt-2">
+        <h2 class="mb-3">Ex2-busca-cidade</h2>
+        <p>
+          A página HTML contém um formulário para inserir um
+          CEP. Ele também inclui um elemento <code>&lt;span&gt;</code> com o <code>id</code> &quot;cidade&quot;
+          que será usado para exibir o nome da cidade correspondente ao CEP inserido.
+        </p>
+        <p>Quando o usuário insere um CEP válido (comprimento
+          igual a 9 caracteres), o script <code>buscaCidade</code> é acionado. Esse script cria um objeto
+          <code>XMLHttpRequest</code> e faz uma requisição GET para o arquivo &quot;busca-cidade.php&quot;
+          passando o CEP como parâmetro.
+        </p>
+        <p>O script possui duas funções de callback:
+          <code>xhr.onload</code> e <code>xhr.onerror</code>. A função <code>xhr.onload</code> é acionada quando a
+          resposta da requisição é recebida. Se o status da resposta for 200, o nome da cidade é atualizado no
+          elemento <code>&lt;span&gt;</code> com o <code>id</code> &quot;cidade&quot;. Caso contrário, o nome da
+          cidade é limpo e uma mensagem de erro é registrada no console do navegador.
+        </p>
+        <p>A função <code>xhr.onerror</code> é acionada quando
+          ocorre um erro de rede durante a requisição. Uma mensagem de erro é registrada no console.</p>
+        <p>O evento <code>window.onload</code> é usado para
+          adicionar um listener ao input de CEP. Sempre que o usuário digita algo no input, a função
+          <code>buscaCidade</code> é chamada, passando o valor do input como argumento.
+        </p>
+        <p>Além do código HTML e JavaScript, há um trecho de
+          código PHP que é processado no lado do servidor. Ele recebe o valor do parâmetro &quot;cep&quot; através
+          do método GET e faz uma verificação para retornar o nome da cidade correspondente ao CEP informado. Se o
+          CEP não for encontrado, é retornado um código de resposta HTTP 404 e uma mensagem informando que o CEP
+          não está disponível.</p>
+      </div>
+    </section>
+    <hr>
+    <!-- Explicação do Ex3-recebendo-json1-->
+    <section class="row justifica">
+      <div class="col-md-8 offset-md-2 mt-2">
+        <h2 class="mb-3">Ex3-recebendo-json1</h2>
+        <p>A página HTML utiliza o framework Bootstrap para criar
+          um formulário de preenchimento de endereço. O formulário possui campos para CEP, rua, bairro e cidade.
+        </p>
+        <p>Para garantir a usabilidade do formulário, foi
+          implementado um script em JavaScript chamado <code>buscaEndereco</code>. Esse script é ativado quando o
+          usuário insere um CEP válido (comprimento igual a 9 caracteres). Ele utiliza o objeto
+          <code>XMLHttpRequest</code> para fazer uma requisição GET ao arquivo &quot;busca-endereco.php&quot;,
+          passando o CEP como parâmetro.
+        </p>
+        <p>Ao receber a resposta da requisição, o script define
+          duas funções de callback: <code>xhr.onload</code> e <code>xhr.onerror</code>. A função
+          <code>xhr.onload</code> é acionada quando a resposta da requisição é recebida. Ela realiza uma série de
+          verificações para garantir que a requisição foi bem-sucedida (status 200) e se a resposta pode ser
+          convertida em um objeto JavaScript válido. Em caso afirmativo, os dados do endereço são extraídos da
+          resposta e utilizados para preencher os campos do formulário correspondentes. Caso contrário, é exibida
+          uma mensagem de erro no console do navegador.
+        </p>
+        <p>A função <code>xhr.onerror</code> é acionada caso
+          ocorra um erro de rede durante a requisição. Uma mensagem de erro é exibida no console para informar o
+          usuário sobre o problema.</p>
+        <p>Para garantir que a função <code>buscaEndereco</code>
+          seja executada sempre que o usuário digitar algo no campo de input de CEP, foi utilizado o evento
+          <code>window.onload</code> para adicionar um listener ao campo. Dessa forma, o valor do input é passado
+          como argumento para a função <code>buscaEndereco</code> e a busca de endereço é feita de forma
+          assíncrona, sem a necessidade de recarregar a página.
+        </p>
+        <p>Além do código HTML e JavaScript, há um trecho de
+          código PHP que é processado no lado do servidor. Ele recebe o valor do parâmetro &quot;cep&quot; via
+          método GET e cria um objeto <code>Endereco</code> com informações fictícias de rua, bairro e cidade, com
+          base no CEP fornecido. Em seguida, o endereço é convertido para o formato JSON e enviado como resposta,
+          junto com o cabeçalho &quot;Content-type: application/json&quot;.</p>
+      </div>
+    </section>
+    <hr>
+    <!-- Explicação do Ex4-recebendo-json2-->
+    <section class="row justifica">
+      <div class="col-md-8 offset-md-2 mt-2">
+        <h2 class="mb-3">Ex4-recebendo-json2</h2>
+        <p>
+          Nesse exercício, apenas houve alterações no script, em relação ao anterior. Sendo que,as duas versões do
+          script <code>buscaEndereco</code> apresentam algumas diferenças em relação ao tratamento da resposta da
+          requisição e manipulação dos dados retornados. A seguir, as principais diferenças:
+        </p>
+        <ol>
+          <li>Manipulação da resposta:
+            <ul>
+              <li style="list-style-type:disc">
+                No exercício anterior, a propriedade <code>responseType</code> é definida como
+                <code>&#x27;json&#x27;</code>, indicando que se espera uma resposta no formato JSON. Isso permite que o
+                objeto <code>xhr.response</code> seja diretamente convertido em um objeto JavaScript válido.
+              </li>
+            </ul>
+            <ul>
+              <li style="list-style-type:disc">
+                Nesse script, não há definição explícita da propriedade <code>responseType</code>. A resposta é obtida
+                como uma string de texto, e em seguida, é feita uma tentativa de converter essa string em um objeto
+                JavaScript usando <code>JSON.parse(xhr.responseText)</code>. Caso a conversão falhe, uma mensagem de
+                erro é exibida.
+              </li>
+            </ul>
+          </li>
+        </ol>
+        <ol start="2">
+          <li>Verificação do status da resposta:
+            <ul>
+              <li style="list-style-type:disc">No exercício anterior, é verificado se o status da resposta é igual a 200
+                e se o valor de <code>xhr.response</code> não é nulo. Essa verificação é realizada para garantir que a
+                requisição foi bem-sucedida e que a resposta pode ser convertida em um objeto JavaScript válido.
+              </li>
+            </ul>
+            <ul>
+              <li style="list-style-type:disc">
+                Nesse script, a verificação do status é feita apenas para verificar se é diferente de 200. Caso o status
+                seja diferente, uma mensagem de erro é exibida.
+              </li>
+            </ul>
+          </li>
+        </ol>
+        <p>Em termos de funcionalidade básica, os dois scripts realizam a mesma tarefa de fazer uma requisição
+          assíncrona para buscar dados de endereço com base em um CEP e preencher os campos do formulário
+          correspondentes. No entanto, a abordagem de manipulação e verificação da resposta é ligeiramente diferente
+          entre os dois scripts. Não houve diferenças no script php.
+        </p>
+      </div>
+    </section>
+    <hr>
+    <!-- Explicação do Ex5-recebendo-json2-->
+    <section class="row justifica">
+      <div class="col-md-8 offset-md-2 mt-2">
+        <h2 class="mb-3">Ex5-recebendo-json2</h2>
+        <p>
+          Já no ex5 no qual se envia o json, a função <code>buscaEndereco</code> do script apresenta diferenças
+          significativas em relação ao anterior, no que diz respeito à forma como a requisição é enviada e os dados são
+          tratados. Vamos analisar as diferenças principais:
+        </p>
+        <ol start="1">
+          <li>Método de requisição:
+            <ul>
+              <li style="list-style-type:disc">
+                No script do ex5, é utilizada uma requisição GET, onde os parâmetros são passados como parte da URL
+                através do método
+                <code>xhr.open(&quot;GET&quot;, &quot;busca-endereco.php?cep=&quot; + cep, true)</code>.
+              </li>
+            </ul>
+            <ul>
+              <li style="list-style-type:disc">No atual, é utilizada uma requisição POST, onde os parâmetros são
+                enviados no corpo da requisição através do método
+                <code>xhr.open(&quot;POST&quot;, &quot;busca-endereco.php&quot;)</code>. Os parâmetros são fornecidos
+                como um objeto JavaScript, convertido em uma string JSON usando <code>JSON.stringify(objetoJS)</code>, e
+                enviado através do método <code>xhr.send()</code>.
+              </li>
+            </ul>
+          </li>
+        </ol>
+        <ol start="2">
+          <li>Formato dos dados enviados:
+            <ul>
+              <li style="list-style-type:disc">No script do ex5, apenas o CEP é enviado como parâmetro na URL
+                da requisição.</li>
+            </ul>
+            <ul>
+              <li style="list-style-type:disc">
+                No atual, além do CEP, são enviados outros dados como parte do
+                corpo da requisição. Esses dados são fornecidos em um objeto JavaScript chamado
+                <code>objetoJS</code>, que contém propriedades como <code>cep</code>, <code>email</code> e
+                <code>apikey</code>.
+              </li>
+            </ul>
+          </li>
+        </ol>
+        <ol start="3">
+          <li>Manipulação da resposta:<ul>
+              <li style="list-style-type:disc">
+                No script do ex5, a resposta é tratada diretamente como um
+                objeto JavaScript usando <code>JSON.parse(xhr.responseText)</code>.
+              </li>
+            </ul>
+            <ul>
+              <li style="list-style-type:disc">
+                No atual também é utilizada a função
+                <code>JSON.parse(xhr.responseText)</code> para converter a resposta em um objeto JavaScript.
+                No entanto, não há verificação do código de status da resposta.
+              </li>
+            </ul>
+          </li>
+        </ol>
+        <p>No script PHP do ex5:</p>
+        <pre class="code code-wrap"><code>$cep = $_GET[&#x27;cep&#x27;] ?? &#x27;&#x27;;</code></pre>
+        <p>
+          Nesse trecho, o valor do parâmetro <code>cep</code> é obtido a partir dos parâmetros da URL, usando a variável
+          global <code>$_GET</code>. Essa abordagem pressupõe que o parâmetro <code>cep</code> seja passado na URL, por
+          exemplo, através de uma requisição GET com a seguinte estrutura:
+          <code>busca-endereco.php?cep=38400-100</code>. O script verifica o valor do <code>$cep</code> e cria um objeto
+          <code>Endereco</code> com valores predefinidos para rua, bairro e cidade, dependendo do valor do CEP. Em
+          seguida, ele retorna os dados do endereço em formato JSON como resposta
+        </p>
+        <p>No script PHP atual:</p>
+        <pre class="code code-wrap"><code>$stringJSON = file_get_contents(&#x27;php://input&#x27;);
+$dados = json_decode($stringJSON);
+$cep = $dados-&gt;cep;</code></pre>
+        <p>
+          Nesse caso, o script espera receber os dados no corpo
+          da requisição, em formato JSON. A função <code>file_get_contents(&#x27;php://input&#x27;)</code> é
+          utilizada para obter a string JSON que contém os dados enviados. A partir dessa string JSON, a função
+          <code>json_decode($stringJSON)</code> é usada para converter a string JSON em um objeto PHP chamado
+          <code>$dados</code>. O valor do CEP é acessado usando <code>$cep = $dados-&gt;cep</code>. Em seguida, o
+          script verifica o valor do <code>$cep</code> e cria um objeto <code>Endereco</code> com valores
+          predefinidos para rua, bairro e cidade, dependendo do valor do CEP. Por fim, ele retorna os dados do
+          endereço em formato JSON como resposta.
+        </p>
+        <ul>
+          <li style="list-style-type:disc">Resumo:
+            <ul>
+              <li style="list-style-type:circle">As principais diferenças na parte dos scripts JavaScript
+                estão no método de requisição (GET vs. POST), nos dados enviados (apenas CEP vs. CEP, email
+                e apikey), e na manipulação da resposta (verificação do código de status ausente no segundo
+                script). Cada abordagem é adequada para diferentes situações, dependendo dos requisitos
+                específicos da aplicação e da API que está sendo consumida.
+              </li>
+            </ul>
+            <ul>
+              <li style="list-style-type:circle">
+                Por outro lado, a principal diferença entre os scripts PHP é
+                a forma como os dados são recebidos. No primeiro script, o valor do CEP é passado como
+                parâmetro na URL da requisição GET. No segundo script, o valor do CEP é enviado no corpo da
+                requisição em formato JSON.</li>
+            </ul>
+          </li>
+        </ul>
+        </p>
+      </div>
+    </section>
+    <hr>
+    <!-- Explicação do Ex6-login-->
+    <section class="row justifica">
+      <div class="col-md-8 offset-md-2 mt-2">
+        <h2 class="mb-3">Ex6-login</h2>
+        <p>A página de login HTML é uma interface simples de
+          login com campos de e-mail, senha e um botão de entrada. Aqui estão os principais pontos do código HTML
+          e do script JavaScript embutido:</p>
+        <ul>
+          <li style="list-style-type:disc">O código HTML define a estrutura básica da página, incluindo os
+            elementos de formulário para e-mail, senha e botão de entrada.
+          </li>
+        </ul>
+        <ul>
+          <li style="list-style-type:disc">O script JavaScript é responsável por lidar com o envio do formulário e
+            o processamento da resposta. Ele faz o seguinte:
+            <ul>
+              <li style="list-style-type:circle">Define uma função chamada <code>sendForm(form)</code> para
+                enviar o formulário de login para o servidor usando AJAX.
+              </li>
+            </ul>
+            <ul>
+              <li style="list-style-type:circle">Cria um objeto <code>XMLHttpRequest</code> para fazer a
+                requisição assíncrona ao servidor.
+              </li>
+            </ul>
+            <ul>
+              <li style="list-style-type:circle">Configura o método HTTP para POST e define a URL de destino
+                usando o atributo <code>action</code> do formulário.
+              </li>
+            </ul>
+            <ul>
+              <li style="list-style-type:circle">Define o tipo de resposta esperada como JSON usando
+                <code>xhr.responseType</code>.
+              </li>
+            </ul>
+            <ul>
+              <li style="list-style-type:circle">Manipula o evento <code>onload</code> para processar a
+                resposta do servidor. Se a resposta for bem-sucedida (status 200) e puder ser convertida em
+                objeto JSON, os dados de resposta são utilizados.
+              </li>
+            </ul>
+            <ul>
+              <li style="list-style-type:circle">Se a resposta indicar sucesso
+                (<code>loginResponse.success</code>), o usuário é redirecionado para uma página de
+                boas-vindas.
+              </li>
+            </ul>
+            <ul>
+              <li style="list-style-type:circle">Caso contrário, uma mensagem de erro é exibida e o campo de
+                senha é limpo.
+              </li>
+            </ul>
+            <ul>
+              <li style="list-style-type:circle">Trata o evento <code>onerror</code> para lidar com erros de
+                rede.
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p>Script PHP (checkLogin.php):
+          Este script PHP é responsável por verificar as credenciais de login enviadas pelo formulário e retornar
+          uma resposta JSON indicando o resultado da verificação. Aqui estão os principais pontos do script PHP:
+        </p>
+        <ul>
+          <li style="list-style-type:disc">O script começa criando uma classe chamada
+            <code>RequestResponse</code>, que possui propriedades <code>success</code> e <code>detail</code>.
+            Essa classe será usada para estruturar a resposta JSON.
+          </li>
+        </ul>
+        <ul>
+          <li style="list-style-type:disc">Obtém os valores do e-mail e senha enviados através do método POST
+            usando as variáveis <code>$_POST[&#x27;email&#x27;]</code> e <code>$_POST[&#x27;senha&#x27;]</code>.
+          </li>
+        </ul>
+        <ul>
+          <li style="list-style-type:disc">Realiza uma validação simplificada para fins didáticos, comparando o
+            e-mail e a senha com valores fixos. Se as credenciais forem válidas, cria uma instância de
+            <code>RequestResponse</code> com sucesso (<code>true</code>) e um detalhe indicando a página de
+            boas-vindas.
+          </li>
+        </ul>
+        <ul>
+          <li style="list-style-type:disc">Caso contrário, cria uma instância de <code>RequestResponse</code> com
+            sucesso (<code>false</code>) e um detalhe vazio.
+          </li>
+        </ul>
+        <ul>
+          <li style="list-style-type:disc">Configura o cabeçalho da resposta para indicar que o conteúdo é JSON e
+            retorna a resposta JSON usando <code>json_encode</code>.
+          </li>
+        </ul>
+        <p>Esses códigos em conjunto criam uma página de login
+          interativa em que o usuário pode inserir suas credenciais, enviá-las para o servidor usando AJAX e
+          receber uma resposta JSON que indica se o login foi bem-sucedido ou não. Dependendo da resposta, o
+          usuário é redirecionado para a página de boas-vindas ou uma mensagem de erro é exibida.
+        </p>
+      </div>
+    </section>
+    <hr>
+    <p class="text-center">Igor Augusto</p>
+  </div>
+  <script>const o = document.getElementById("copyIcon"), n = document.getElementById("codeSnippet"); o.addEventListener("click", () => { navigator.clipboard.writeText(n.innerText).then(() => { console.log("Code copied to clipboard!") }).catch((o) => { console.error("Failed to copy code to clipboard:", o) }) });</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js">
+  </script>
+</body>
+
+</html>
