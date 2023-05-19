@@ -2,7 +2,7 @@
 
 Repositório com arquivos da disciplina de Programação para Internet (PPI) do curso de Sistemas de Informações da Universidade Federal de Uberlândia (UFU).
 
-## Labs
+## Links para os trabalhos
 
 - [Trabalho 01](https://igoraugusto.me/PPI/trabalho1/)
 - [Trabalho 02](https://igoraugusto.me/PPI/trabalho2/)
