@@ -4,15 +4,15 @@ Repositório com arquivos da disciplina de Programação para Internet (PPI) do 
 
 ## Links para os trabalhos
 
-- [Trabalho 01](https://igoraugusto.me/PPI/trabalho1/)
-- [Trabalho 02](https://igoraugusto.me/PPI/trabalho2/)
-- [Trabalho 03](https://igoraugusto.me/PPI/trabalho3/)
-- [Trabalho 04](https://igoraugusto.me/PPI/trabalho4/)
-- [Trabalho 05](https://igoraugusto.me/PPI/trabalho5/)
-- [Trabalho 06](https://igoraugusto.me/PPI/trabalho6/)
-- [Trabalho 07](https://igoraugusto.me/PPI/trabalho7/)
-- [Trabalho 08](https://igoraugusto.me/PPI/trabalho8/)
-- [Trabalho 09](https://igoraugusto.me/PPI/trabalho9/)
+- [Trabalho 01](https://igoraugusto.me/PPI/trabalho01/)
+- [Trabalho 02](https://igoraugusto.me/PPI/trabalho02/)
+- [Trabalho 03](https://igoraugusto.me/PPI/trabalho03/)
+- [Trabalho 04](https://igoraugusto.me/PPI/trabalho04/)
+- [Trabalho 05](https://igoraugusto.me/PPI/trabalho05/)
+- [Trabalho 06](https://igoraugusto.me/PPI/trabalho06/)
+- [Trabalho 07](https://igoraugusto.me/PPI/trabalho07/)
+- [Trabalho 08](https://igoraugusto.me/PPI/trabalho08/)
+- [Trabalho 09](https://igoraugusto.me/PPI/trabalho09/)
 - [Trabalho 10](https://igoraugusto.me/PPI/trabalho10/)
 
 ## Conteúdo dos Labs
