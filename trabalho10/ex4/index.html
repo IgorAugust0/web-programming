@@ -74,42 +74,17 @@
             return fetch(url)
                 .then(response => response.json())
                 .then(data => {
-                    const cota = data['Global Quote'][05.price];
+                    const cota = data['Global Quote']['05. price'];
                     return { acao, cota }
                 })
-            // const url = `https://alpha-vantage.p.rapidapi.com/query?function=GLOBAL_QUOTE&symbol=${acao}&datatype=json`;
-            // const options = {
-            //     method: 'GET',
-            //     headers: {
-            //         'X-RapidAPI-Key': '111aee7759msh9c6b63656809455p1eb24cjsn6ced8e5a92fc',
-            //         'X-RapidAPI-Host': 'alpha-vantage.p.rapidapi.com'
-            //     }
-            // }
-            // return fetch(url, options)
         }
 
         function RenderStock(acao) {
-            const divCotas = document.getElementById('cotas');
-            const elemAcoes = document.createElement('p');
-            elemAcoes.textContent = `Ação: ${acao.acao} - Cotação: ${acao.cota}`;
-            divCotas.appendChild(elemAcoes);
+            const inputField = document.getElementsByName(acao.acao)[0];
+            const stockInfo = document.createElement('p');
+            stockInfo.textContent = `${acao.acao}: ${acao.cota}`;
+            inputField.parentNode.replaceChild(stockInfo, inputField);
         }
-
-        // function getQuotesSequentially() {
-        //     const acaoForm = document.getElementById('acaoForm');
-        //     const acoes = acaoForm.querySelectorAll('input');
-        //     const acoesArray = Array.from(acoes);
-        //     const cotacoes = [];
-        //     acoesArray.forEach(acao => {
-        //         getQuotes(acao.value)
-        //             .then(acao => {
-        //                 cotacoes.push(acao);
-        //                 if (cotacoes.length === acoesArray.length) {
-        //                     cotacoes.forEach(acao => RenderStock(acao));
-        //                 }
-        //             })
-        //     })
-        // }
 
         function getQuotesSequentially() {
             const form = document.getElementById('acaoForm');
