@@ -13,6 +13,7 @@ Repositório com arquivos da disciplina de Programação para Internet (PPI) do 
 - [Trabalho 07](https://github.com/IgorAugust0/PPI/tree/main/trabalho7)
 - [Trabalho 08](https://github.com/IgorAugust0/PPI/tree/main/trabalho8)
 - [Trabalho 09](https://github.com/IgorAugust0/PPI/tree/main/trabalho9)
+- [Trabalho 10](https://github.com/IgorAugust0/PPI/tree/main/trabalho10)
 
 ## Conteúdo dos Labs
 
@@ -27,6 +28,7 @@ Repositório com arquivos da disciplina de Programação para Internet (PPI) do 
 | 07 | Bootstrap e Responsividade | Frameworks e diferentes tamahos de telas |
 | 08 |  Php com MySQL |  Desenvolvimento Web com Banco de Dados |
 | 09 |  Ajax - XHR |  Requisições Assíncronas com o XMLHttpRequest |
+| 10 |  Ajax - API Fetch |  Requisições Assíncronas com a API Fetch sem async/await |
 
 ## Autor
 
