@@ -105,9 +105,14 @@
         .then(response => response.json())
         .then(loginResponse => {
           // utiliza os dados da resposta
-          if (loginResponse.success)
-            window.location = loginResponse.detail;
-          else {
+          if (loginResponse.success) {
+            // Redireciona para a página home do site se o login for bem sucedido
+            if (loginResponse.detail) {
+              window.location.href = loginResponse.detail;
+            } else {
+              console.log("Nenhuma URL de redirecionamento foi especificada.");
+            }
+          } else {
             document.querySelector("#loginFailMsg").style.display = 'block';
             form.senha.value = "";
             form.senha.focus();
