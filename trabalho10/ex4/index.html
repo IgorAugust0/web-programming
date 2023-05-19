@@ -10,6 +10,7 @@
 
     <style>
         body {
+            /* Configurações gerais do corpo do documento */
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             line-height: 1.5rem;
             background-color: #ddd;
@@ -18,6 +19,7 @@
         }
 
         main {
+            /* Estilização da seção principal */
             width: 60%;
             margin: 0;
             padding: 2% 4%;
@@ -30,6 +32,7 @@
         }
 
         h1 {
+            /* Estilização do cabeçalho */
             font-size: 5rem;
             text-align: center;
         }
@@ -70,6 +73,7 @@
 
     <script>
         function getQuotes(acao) {
+            // Função para obter a cotação de uma ação a partir da API da Alpha Vantage
             const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${acao}&apikey=TRQOS1UI8B0IEPNW`;
             return fetch(url)
                 .then(response => response.json())
@@ -80,25 +84,28 @@
         }
 
         function RenderStock(acao) {
+            // Função para renderizar as informações de uma ação no formulário
             const inputField = document.getElementsByName(acao.acao)[0];
-            const stockInfo = document.createElement('p');
-            stockInfo.textContent = `${acao.acao}: ${acao.cota}`;
-            inputField.parentNode.replaceChild(stockInfo, inputField);
+            const stockInfo = document.createElement('p'); // cria um parágrafo
+            stockInfo.textContent = `${acao.acao}: ${acao.cota}`; // define o texto do parágrafo
+            inputField.parentNode.replaceChild(stockInfo, inputField); // substitui o input pelo parágrafo
         }
 
         function getQuotesSequentially() {
+            // Função para obter as cotações das ações sequencialmente
             const form = document.getElementById('acaoForm');
             const acoes = Object.values(form.elements)
-                .filter(element => element.name.startsWith('acao'))
-                .map(element => element.value.trim());
+                .filter(element => element.name.startsWith('acao')) // filtra os inputs que começam com 'acao'
+                .map(element => element.value.trim()); // obtém o valor dos inputs e remove os espaços em branco
 
             let sequencePromise = Promise.resolve();
 
+            // ao utilizar for Each, não é necessário encadear as promises manualmente
             acoes.forEach(acao => {
                 if (acao !== '') {
                     sequencePromise = sequencePromise.then(() => {
                         return getQuotes(acao)
-                            .then(cotacao => RenderStock(cotacao))
+                            .then(cotacao => RenderStock(cotacao)) // RenderStock é chamada quando a promise retornada por getQuotes for resolvida
                             .catch(error => console.log(`Error ao buscar cotação da ação ${acao}: ${error}`));
                     });
                 }
@@ -106,15 +113,16 @@
         }
 
         function getQuotesInParallel() {
+            // Função para obter as cotações das ações em paralelo
             const form = document.getElementById('acaoForm');
             const acoes = Object.values(form.elements)
                 .filter(element => element.name.startsWith('acao'))
                 .map(element => element.value.trim())
-                .filter(acao => acao !== '');
+                .filter(acao => acao !== ''); // filtra os inputs que começam com 'acao' e remove os espaços em branco
 
-            const cotaPromises = acoes.map(acao => getQuotes(acao));
+            const cotaPromises = acoes.map(acao => getQuotes(acao)); // cria um array de promises
 
-            Promise.all(cotaPromises)
+            Promise.all(cotaPromises) // Promise.all recebe um array de promises e retorna uma promise que é resolvida quando todas as promises do array forem resolvidas
                 .then(cotacoes => cotacoes.forEach(cota => RenderStock(cota)))
                 .catch(error => console.log('Erro ao buscar cotações: ' + error));
         }
