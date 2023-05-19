@@ -37,6 +37,32 @@
   <main>
     <h2>Temperatura Local: <span id="temp">...</span></h2>
     <h2>Velocidade do Vento: <span id="wind">...</span></h2>
+    <p>Explicação do código:</p>
+    <p>O código é utilizado para exibir dados meteorológicos em uma página da web usando a
+      localização do usuário. A função buscaClimaLocal() faz uma requisição por meio do método
+      `fetch()` para acessar duas APIs diferentes. A primeira API, `https://ipapi.co/json/`,
+      é usada para recuperar a localização do usuário com base em seu endereço IP. Isso é realizado
+      chamando o método `fetch()` com o URL da API como argumento. O método `then()` é usado para
+      converter a resposta para o formato JSON.
+    </p>
+    <p>A segunda API, `https://api.open-meteo.com/v1/forecast`, é usada para recuperar os dados
+      meteorológicos da localização do usuário. A latitude e longitude da localização do usuário
+      são passadas como parâmetros para a API usando literais de modelo. O método `then()`
+      é usado novamente para converter a resposta para o formato JSON.
+    </p>
+    <p>
+      Dessa forma, os dados de temperatura e velocidade do vento da resposta da API são usados
+      para atualizar o conteúdo de dois elementos HTML na página da web. A propriedade `textContent`
+      é usada para definir o conteúdo dos elementos `temp` e `wind`, isto é, atualiza o conteúdo
+      das tags &lt;span&gt; para os dados de temperatura e velocidade do vento, respectivamente.
+    </p>
+    <p>
+      O método `catch()` é usado para lidar com quaisquer erros que possam ocorrer durante as
+      solicitações da API. Se ocorrer um erro, ele é registrado no console usando o método `console.log()`.
+    </p>
+    <p>
+      Por fim, a função buscaClimaLocal() é chamada quando a página é carregada, através do evento onload da janela.
+    </p>
   </main>
   <script>
 
@@ -62,7 +88,11 @@
 </body>
 
 </html>
-<!-- Explicação do código:
+<!-- 
+  (coloquei no html também porque não entendi se é pra colocar aqui ou lá mesmo)
+
+  Explicação do código:
+  
   O código é utilizado para exibir dados meteorológicos em uma página da web usando a 
   localização do usuário. A função buscaClimaLocal() faz uma requisição por meio do método 
   `fetch()` para acessar duas APIs diferentes. A primeira API, `https://ipapi.co/json/`, 
@@ -75,7 +105,7 @@
   são passadas como parâmetros para a API usando literais de modelo. O método `then()` 
   é usado novamente para converter a resposta para o formato JSON.
 
-  Por fim, os dados de temperatura e velocidade do vento da resposta da API são usados 
+  Dessa forma, os dados de temperatura e velocidade do vento da resposta da API são usados 
   para atualizar o conteúdo de dois elementos HTML na página da web. A propriedade `textContent` 
   é usada para definir o conteúdo dos elementos `temp` e `wind`, isto é, atualiza o conteúdo 
   das tags <span> para os dados de temperatura e velocidade do vento, respectivamente.
@@ -83,5 +113,5 @@
   O método `catch()` é usado para lidar com quaisquer erros que possam ocorrer durante as 
   solicitações da API. Se ocorrer um erro, ele é registrado no console usando o método `console.log()`.
 
-  A função buscaClimaLocal() é chamada quando a página é carregada, através do evento onload da janela.
+  Por fim, a função buscaClimaLocal() é chamada quando a página é carregada, através do evento onload da janela.
 -->
