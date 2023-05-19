@@ -93,19 +93,16 @@
       // let myForm = document.querySelector("form");
       let formData = new FormData(form);
 
+      // localiza a URL do script PHP
+      const url = form.getAttribute("action");
       // opções da requisição
       const options = {
         method: 'POST',
         body: formData
       }
 
-      fetch("checkLogin.php", options)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(response.status);
-          }
-          return response.json();
-        })
+      fetch(url, options)
+        .then(response => response.json())
         .then(loginResponse => {
           // utiliza os dados da resposta
           if (loginResponse.success)
