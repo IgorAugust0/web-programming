@@ -12,6 +12,7 @@
     body {
       padding-top: 2rem;
     }
+
     h3 {
       margin-bottom: 2rem;
     }
@@ -22,7 +23,7 @@
 
   <div class="container">
     <h3>Preenchendo o endereço com Ajax</h3>
-  
+
     <form class="row g-3">
       <div>
         <label for="cep" class="form-label">Informe o CEP no formato xxxxx-xxx (Ex. 38400-100)</label>
@@ -41,34 +42,52 @@
         <input type="text" class="form-control" id="cidade" name="cidade">
       </div>
     </form>
-  
+
   </div>
 
   <script>
 
-    async function buscaEndereco(cep) {   
+    async function buscaEndereco(cep) {
+      // Verifica se o comprimento do CEP é diferente de 9 caracteres e retorna se for o caso (não faz nada)
       if (cep.length != 9) return;
 
+      // Tenta executar o código abaixo e, em caso de erro, imprime o erro no console e retorna
       try {
+
+        // Faz uma chamada assíncrona à função fetch para buscar o endereço com base no CEP fornecido. 
+        // O await aguarda a resposta da requisição antes de prosseguir para a próxima linha de código.
         let response = await fetch("busca-endereco.php?cep=" + cep);
+
+        // Verifica se a resposta não é OK e lança um erro com a mensagem de status da resposta
         if (!response.ok) throw new Error(response.statusText);
+
+        // Aguarda a conversão (novamente por meio do await) da resposta em formato JSON e o seu resultado 
+        // é armazenado na variável endereco.
         var endereco = await response.json();
       }
       catch (e) {
+        // Em caso de erro, imprime o erro no console e retorna
         console.error(e);
         return;
       }
 
+      // Obtém o formulário pelo seletor "form"
       let form = document.querySelector("form");
+
+      // Preenche os campos do formulário com os valores do endereço obtido na resposta
       form.rua.value = endereco.rua;
       form.bairro.value = endereco.bairro;
       form.cidade.value = endereco.cidade;
     }
 
     window.onload = function () {
+      // Obtém o elemento de input do CEP pelo seletor "#cep" e armazena na variável inputCep
       const inputCep = document.querySelector("#cep");
+
+      // Define o evento onkeyup para chamar a função buscaEndereco ao digitar no input do CEP
       inputCep.onkeyup = () => buscaEndereco(inputCep.value);
     }
+
 
   </script>
 

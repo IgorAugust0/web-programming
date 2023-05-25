@@ -52,101 +52,59 @@
             </div>
         </div>
         <hr>
-        <!-- Print do item a -->
+        <!-- Comparacao -->
         <section class="row">
             <div class="col-md-8 offset-md-2 mt-2">
                 <h3 class="mb-3">a&#41; Comparação:</h3>
-                <p>
-                    Os dois scripts realizam uma requisição para buscar o endereço correspondente a um determinado CEP,
-                    preenchendo os campos do formulário com os dados retornados. O primeiro script utiliza a API
-                    XMLHttpRequest para fazer a requisição, enquanto o segundo script utiliza a função fetch.
-                </p>
-                <p>Existem algumas diferenças notáveis entre ambos códigos JavaScript:</p>
-                <ol>
-                    <li>Sintaxe:
-                        <ul>
-                            <li style="list-style-type:disc">
-                                O primeiro script utiliza a API XMLHttpRequest, que requer a criação de um objeto
-                                XMLHttpRequest, a definição de callbacks para tratar os eventos de resposta e o envio da
-                                requisição manualmente. O segundo script utiliza a função fetch, que retorna uma Promise
-                                e permite encadear métodos para tratar a resposta.
-                            </li>
-                        </ul>
+                <ul>
+                    <li>
+                        <p>
+                            <strong>Ex1-cep-fetch</strong>
+                            <br>A função <code>buscaEndereco()</code> recebe um parâmetro <code>cep</code>, que é usado
+                            para construir uma URL para buscar os detalhes do endereço no servidor. Depois que a
+                            solicitação é feita, a função verifica se a resposta é ok e, em seguida, analisa os dados
+                            usando o método <code>.json()</code>. Se houver um erro, a função redefinirá o formulário e
+                            registrará o erro no console.
+                        </p>
                     </li>
-                </ol>
-                <ol start="2">
-                    <li>Tratamento de erros:
-                        <ul>
-                            <li style="list-style-type:disc">
-                                O primeiro script verifica se houve algum erro na resposta através do status da
-                                requisição e da validade da resposta convertida em objeto JSON. Caso haja algum erro,
-                                ele exibe mensagens de erro no console. O segundo script utiliza os métodos catch() para
-                                tratar erros na comunicação com o servidor ou no processamento da requisição no PHP.
-                            </li>
-                        </ul>
+                    <li>
+                        <p>
+                            <strong>Ex3-cep-await</strong>
+                            <br>A função <code>buscaEndereco()</code> neste exemplo também recebe um parâmetro
+                            <code>cep</code>. No entanto, neste caso, a função usa a palavra-chave <code>await</code>
+                            para aguardar a resposta do servidor. Se houver um erro na resposta, a função registrará o
+                            erro no console e retornará. Se a resposta estiver ok, a função analisará os dados usando o
+                            método <code>.json()</code>, e depois atualizará o formulário com os detalhes do endereço.
+                        </p>
                     </li>
-                </ol>
-                <ol start="3">
-                    <li>Manipulação dos dados da resposta:
-                        <ul>
-                            <li style="list-style-type:disc">
-                                Ambos os scripts utilizam os dados retornados para preencher os campos do formulário,
-                                mas a forma de acesso aos dados é diferente. No primeiro script, os dados estão
-                                disponíveis diretamente na propriedade response do objeto XMLHttpRequest. No segundo
-                                script, é necessário chamar o método json() da resposta para converter os dados em um
-                                objeto JavaScript, que é passado para o próximo then().
-                            </li>
-                        </ul>
+                    <li>
+                        <p>
+                            <strong>Resumo</strong>
+                            <br>Em geral, ambas as funções realizam a mesma tarefa de buscar detalhes de endereço com
+                            base em um CEP fornecido. No entanto, Ex3-cep-await usa a sintaxe mais recente
+                            <code>await</code>, o que pode tornar o código mais fácil de ler e entender.
+                        </p>
                     </li>
-                </ol>
-                <ol start="4">
-                    <li>Legibilidade:
-                        <ul>
-                            <li style="list-style-type:disc">
-                                O segundo script utilizando fetch e encadeamento de métodos é considerado mais conciso e
-                                legível do que o primeiro script que utiliza XMLHttpRequest e callbacks.
-                            </li>
-                        </ul>
-                    </li>
-                </ol>
-                <p>
-                    Em termos de funcionalidade, ambos os scripts realizam a mesma tarefa de buscar o endereço
-                    correspondente a um CEP e preencher os campos do formulário. A escolha entre os dois scripts pode
-                    depender das preferências pessoais do desenvolvedor, das necessidades do projeto e do suporte das
-                    versões de navegadores-alvo. A API fetch é mais recente e mais moderna, e é amplamente suportada
-                    pelos navegadores modernos, enquanto a API XMLHttpRequest é mais antiga e possui suporte em
-                    navegadores mais antigos.
-                </p>
+                </ul>
             </div>
         </section>
         <hr>
         <!-- Print do item b -->
         <section class="row">
             <div class="col-md-8 offset-md-2 mt-2">
-                <h2 class="mb-3">b&#41;</h2>
+                <h3 class="mb-3">b&#41; Prints:</h3>
                 <div class="mb-3">
-                    <p><b>Headers:</b></p>
-                    <a href="images/b.headers.png" target="_blank" rel="noopener noreferrer">
-                        <img src="images/b.headers.png" alt="headers do item b" class="img-fluid">
+                    <h5>Inicio:</h5>
+                    <a href="images/ex1-b-inicio.png" target="_blank" rel="noopener noreferrer">
+                        <img src="images/ex1-b-inicio.png" alt="print do inicio do item b" class="img-fluid"
+                            title="Inicio da execução">
                     </a>
                 </div>
                 <div class="mb-3">
-                    <p><b>Response:</b></p>
-                    <a href="images/b.response.png" target="_blank" rel="noopener noreferrer">
-                        <img src="images/b.response.png" alt="response do item b" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-        </section>
-        <hr>
-        <!-- Print do item c -->
-        <section class="row">
-            <div class="col-md-8 offset-md-2 mt-2">
-                <h2 class="mb-3">c&#41;</h2>
-                <div class="mb-3">
-                    <p><b>Headers:</b></p>
-                    <a href="images/c.headers.png" target="_blank" rel="noopener noreferrer">
-                        <img src="images/c.headers.png" alt="headers do item c" class="img-fluid">
+                    <h5>Fim:</h5>
+                    <a href="images/ex1-b-fim.png" target="_blank" rel="noopener noreferrer">
+                        <img src="images/ex1-b-fim.png" alt="print do fim do item b" class="img-fluid"
+                            title="Fim da execução">
                     </a>
                 </div>
             </div>
@@ -155,67 +113,50 @@
         <!--  Explicação e print do item d -->
         <section class="row">
             <div class="col-md-8 offset-md-2 mt-2">
-                <h2 class="mb-3">d&#41;</h2>
-                <ul>
-                    <li>
-                        <p>
-                            <strong>Qual foi o código de status retornado?</strong>
-                            <br>Foi retornado o código de status 200 OK, indicando que a requisição foi bem-sucedida,
-                            mas o conteúdo
-                            da resposta é o erro de análise de sintaxe, isto é, por mais que o código de status
-                            aparentemente indica que deu tudo certo, na realidade não foi o caso.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>O que foi retornado no corpo da resposta HTTP?</strong>
-                            <br>A mensagem de erro específica exibida no corpo da resposta é a seguinte:
-                        </p>
-                        <div class="code code-wrap">
-                            <code>Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/vol11_1/epizy.com/epiz_33710554/htdocs/XHR/Ex2-busca-cidade/busca-cidade.php on line 6</code>
-                        </div>
-                        <p>
-                            Essa mensagem de erro indica que um echo inesperado foi encontrado na linha 6 do arquivo
-                            busca-cidade.php,
-                            o que causa uma análise de sintaxe incorreta, ocasionado pela ausência do fecha parênteses
-                            no primeiro if.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>Em qual situação essa configuração seria útil?</strong>
-                            <br>Essa configuração é útil durante o desenvolvimento ou em ambientes de depuração, pois
-                            exibe mensagens
-                            de erro e avisos diretamente na página, ajudando os desenvolvedores a identificar e corrigir
-                            problemas no
-                            código.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>Em qual situação ela jamais deveria ser utilizada?</strong>
-                            <br>Ela jamais deveria ser utilizada em ambientes de produção ou em servidores acessíveis ao
-                            público em
-                            geral. Exibir mensagens de erro detalhadas pode expor informações sensíveis do código-fonte,
-                            estrutura do
-                            sistema e outros dados confidenciais, representando um risco de segurança significativo. Em
-                            ambientes de
-                            produção, é recomendado configurar o servidor para registrar os erros em logs de forma
-                            segura, sem
-                            exibi-los ao usuário final.
-                        </p>
-                    </li>
-                </ul>
-                <div class="mb-3">
-                    <p><b>Headers:</b></p>
-                    <a href="images/d.headers.png" target="_blank" rel="noopener noreferrer">
-                        <img src="images/d.headers.png" alt="headers do item d" class="img-fluid">
-                    </a>
+                <h3 class="mb-3">d&#41; Comentários:</h3>
+                <p>(também está comentado no próprio código)</p>
+                <div class="code code-wrap">
+                    <pre>
+async function buscaEndereco(cep) {
+    // Verifica se o comprimento do CEP é diferente de 9 caracteres e retorna se for o caso (não faz nada)
+    if (cep.length != 9) return;
+
+    // Tenta executar o código abaixo e, em caso de erro, imprime o erro no console e retorna
+    try {
+
+        // Faz uma chamada assíncrona à função fetch para buscar o endereço com base no CEP fornecido. 
+        // O await aguarda a resposta da requisição antes de prosseguir para a próxima linha de código.
+        let response = await fetch("busca-endereco.php?cep=" + cep);
+
+        // Verifica se a resposta não é OK e lança um erro com a mensagem de status da resposta
+        if (!response.ok) throw new Error(response.statusText);
+
+        // Aguarda a conversão (novamente por meio do await) da resposta em formato JSON e o seu resultado 
+        // é armazenado na variável endereco.
+        var endereco = await response.json();
+    }
+    catch (e) {
+        // Em caso de erro, imprime o erro no console e retorna
+        console.error(e);
+        return;
+    }
+
+    // Obtém o formulário pelo seletor "form"
+    let form = document.querySelector("form");
+
+    // Preenche os campos do formulário com os valores do endereço obtido na resposta
+    form.rua.value = endereco.rua;
+    form.bairro.value = endereco.bairro;
+    form.cidade.value = endereco.cidade;
+}
+</pre>
                 </div>
             </div>
         </section>
         <hr>
-        <p class="text-center">Igor Augusto</p>
+        <footer>
+            <p class="text-center">Igor Augusto</p>
+        </footer>
     </div>
 </body>
 
