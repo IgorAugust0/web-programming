@@ -14,6 +14,7 @@ Repositório com arquivos da disciplina de Programação para Internet (PPI) do 
 - [Trabalho 08](https://igoraugusto.me/PPI/trabalho08/)
 - [Trabalho 09](https://igoraugusto.me/PPI/trabalho09/)
 - [Trabalho 10](https://igoraugusto.me/PPI/trabalho10/)
+- [Trabalho 11](https://igoraugusto.me/PPI/trabalho11/)
 
 ## Conteúdo dos Labs
 
@@ -29,6 +30,7 @@ Repositório com arquivos da disciplina de Programação para Internet (PPI) do 
 | 08 |  Php com MySQL | Desenvolvimento Web com Banco de Dados |
 | 09 |  Ajax - XHR | Requisições Assíncronas com o XMLHttpRequest |
 | 10 |  Ajax - API Fetch | Requisições Assíncronas com a API Fetch sem async/await |
+| 11 |  Ajax - API Fetch | Requisições Assíncronas com a API Fetch com async/await |
 
 ## Autor
 
