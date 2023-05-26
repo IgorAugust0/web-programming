@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Exercício 1</title>
+    <style>
+        .code,
+        code {
+            background: rgba(135, 131, 120, 0.15);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+            tab-size: 2;
+        }
+
+        .code {
+            padding: 1.5em 1em;
+        }
+
+        .code-wrap {
+            word-break: break-all;
+        }
+
+        .code>code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+
+        code {
+            color: #eb5757;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <h1 class="mb-4 text-center">Exercício 3</h1>
+            <div class="col-md-4">
+                <div class="list-group">
+                    <a href="./Ex4-encadeamento-await/"
+                        class="list-group-item list-group-item-action">Ex4-encadeamento-await</a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!-- Comparacao -->
+        <section class="row">
+            <div class="col-md-8 offset-md-2 mt-2">
+                <h3 class="mb-3">a&#41; Comparação:</h3>
+                <p>Ambos os códigos têm o mesmo propósito, que é buscar informações do clima de uma localidade
+                    específica. No entanto, eles utilizam técnicas diferentes para alcançar esse mesmo objetivo.
+                </p>
+                <ul>
+                    <li>
+                        <h5>Ex2-encadeamento-fetch</h5>
+                        <ol class="mt-3">
+                            <li>A função <code>fetch('https://ipapi.co/json/')</code> é chamada para obter os dados de
+                                localização do usuário.
+                            </li>
+                            <li>O primeiro callback <code>.then</code> é executado quando a resposta é recebida. Ele
+                                converte a resposta para o formato JSON.
+                            </li>
+                            <li>O segundo callback <code>.then</code> é chamado com os dados convertidos do passo
+                                anterior. Ele usa a latitude e longitude dos dados para fazer outra requisição fetch e
+                                obter a previsão do tempo local.
+                            </li>
+                            <li>O terceiro callback <code>.then</code> é executado quando a resposta da segunda
+                                requisição <code>fetch</code> é recebida. Ele converte a resposta para o formato JSON.
+                            </li>
+                            <li>O quarto callback <code>.then</code> é chamado com os dados convertidos do passo
+                                anterior. Ele atualiza as informações de temperatura e velocidade do vento na página.
+                            </li>
+                            <li>Se ocorrer algum erro em qualquer etapa, o callback <code>.catch</code> é executado,
+                                registrando o erro no console.
+                            </li>
+                        </ol>
+                        <p class="mt-3">Em resumo, o primeiro código usa o método fetch() para fazer uma requisição HTTP
+                            para o servidor. Ele usa os dados de latitude e longitude buscados para fazer outra
+                            requisição HTTP para o servidor para obter informações de clima. Por fim, ele atualiza as
+                            informações de temperatura e velocidade do vento na página da web. Se houver um erro, ele é
+                            registrado no console.
+                        </p>
+
+                    </li>
+                    <li>
+                        <h5>Ex4-encadeamento-await</h5>
+                        <ol class="mt-3">
+                            <li>A palavra-chave <code>async</code> indica que a função contém operações assíncronas.
+                            </li>
+                            <li>A palavra-chave <code>await</code> é usada para pausar a execução da função até que uma
+                                promessa seja resolvida ou rejeitada.
+                            </li>
+                            <li>A função <code>fetch</code> é chamada para obter os dados de localização do usuário, e a
+                                resposta é atribuída a <code>response1</code>.
+                            </li>
+                            <li>Se a resposta não for bem-sucedida (<code>!response1.ok</code>), um erro é lançado.
+                            </li>
+                            <li>O método <code>response1.json()</code> é usado para analisar o corpo da resposta como
+                                JSON, e o resultado é atribuído a <code>local</code>.
+                            </li>
+                            <li>Outra requisição <code>fetch</code> é feita para obter a previsão do tempo local, usando
+                                a latitude e longitude de <code>local</code>.
+                            <li>O tratamento de erro e a análise JSON são feitos de forma similar para
+                                <code>response2</code>, e o resultado é atribuído a <code>clima</code>.
+                            <li>As informações de temperatura e vento na página são atualizadas com os valores de
+                                <code>clima</code>.
+                            <li>Se ocorrer algum erro dentro do bloco <code>try</code>, o bloco <code>catch</code> é
+                                executado. O erro é registrado no console, e um alerta é exibido ao usuário.
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h5 class="mt-3 mb-3">Resumo</h5>
+                        Em geral, ambos os códigos alcançam o mesmo resultado, que é obter os dados de
+                        localização do usuário e a previsão do tempo local, e atualizar os elementos correspondentes
+                        na página. O segundo código, usando a sintaxe async/await, oferece uma forma mais legível e
+                        estruturada de lidar com operações assíncronas em comparação com a cadeia de promessas usada
+                        no primeiro código.
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <hr>
+        <!-- Print do item b -->
+        <section class="row">
+            <div class="col-md-8 offset-md-2 mt-2">
+                <h3 class="mb-3">b&#41; Prints:</h3>
+                <div class="mb-3">
+                    <h5>Inicio:</h5>
+                    <a href="images/ex1-b-inicio.png" target="_blank" rel="noopener noreferrer">
+                        <img src="images/ex1-b-inicio.png" alt="print do inicio do item b" class="img-fluid"
+                            title="Inicio da execução">
+                    </a>
+                </div>
+                <div class="mb-3">
+                    <h5>Fim:</h5>
+                    <a href="images/ex1-b-fim.png" target="_blank" rel="noopener noreferrer">
+                        <img src="images/ex1-b-fim.png" alt="print do fim do item b" class="img-fluid"
+                            title="Fim da execução">
+                    </a>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <!--  Explicação e print do item d -->
+        <section class="row">
+            <div class="col-md-8 offset-md-2 mt-2">
+                <h3 class="mb-3">d&#41; Comentários:</h3>
+                <p>(também está comentado no próprio código)</p>
+                <div class="code code-wrap">
+                    <pre>
+async function buscaEndereco(cep) {
+    // Verifica se o comprimento do CEP é diferente de 9 caracteres e retorna se for o caso (não faz nada)
+    if (cep.length != 9) return;
+
+    // Tenta executar o código abaixo e, em caso de erro, imprime o erro no console e retorna
+    try {
+
+        // Faz uma chamada assíncrona à função fetch para buscar o endereço com base no CEP fornecido. 
+        // O await aguarda a resposta da requisição antes de prosseguir para a próxima linha de código.
+        let response = await fetch("busca-endereco.php?cep=" + cep);
+
+        // Verifica se a resposta não é OK e lança um erro com a mensagem de status da resposta
+        if (!response.ok) throw new Error(response.statusText);
+
+        // Aguarda a conversão (novamente por meio do await) da resposta em formato JSON e o seu resultado 
+        // é armazenado na variável endereco.
+        var endereco = await response.json();
+    }
+    catch (e) {
+        // Em caso de erro, imprime o erro no console e retorna
+        console.error(e);
+        return;
+    }
+
+    // Obtém o formulário pelo seletor "form"
+    let form = document.querySelector("form");
+
+    // Preenche os campos do formulário com os valores do endereço obtido na resposta
+    form.rua.value = endereco.rua;
+    form.bairro.value = endereco.bairro;
+    form.cidade.value = endereco.cidade;
+}
+</pre>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <footer>
+            <p class="text-center">Igor Augusto</p>
+        </footer>
+    </div>
+</body>
+
+</html>
