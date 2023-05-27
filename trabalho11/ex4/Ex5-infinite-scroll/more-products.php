@@ -40,5 +40,5 @@ $randProds = [
   $products[rand(0, 6)]
 ];
 
-header('Content-type: application/json');
-echo json_encode($randProds);
+header('Content-type: application/json'); // define o tipo de conteúdo como JSON
+echo json_encode($randProds); // converte o array de produtos para JSON e o imprime
