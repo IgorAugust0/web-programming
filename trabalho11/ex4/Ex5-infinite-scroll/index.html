@@ -53,6 +53,10 @@
   <section id="products">
     <h2>Nossos produtos</h2>
 
+    <!-- 
+    Template é um elemento usado para declarar fragmentos de HTMl que podem ser clonados e inseridos ao documento 
+    por meio de um script, sendo que ele não é renderizado na página, mas pode ser usado para gerar outros elementos html
+  -->
     <template id="template">
       <div class="item">
         <img class="item-image" src="images/{{prod-image}}"></img>
@@ -65,43 +69,46 @@
 
   <script>
 
+    // Função que renderiza os produtos na página
     function renderProducts(newProducts) {
 
-      const prodsSection = document.getElementById("products");
-      const template = document.getElementById("template");
+      const prodsSection = document.getElementById("products"); // busca a seção de produtos na página pelo id
+      const template = document.getElementById("template"); // busca o template de produto na página pelo id
 
+      // para cada produto recebido, renderiza o template com os dados do produto
       for (let product of newProducts) {
-        let html = template.innerHTML
-          .replace("{{prod-image}}", product.imagePath)
-          .replace("{{prod-name}}", product.name)
-          .replace("{{prod-price}}", product.price);
+        let html = template.innerHTML // pega o html do template
+          .replace("{{prod-image}}", product.imagePath) // substitui a imagem, com o caminho da imagem do produto
+          .replace("{{prod-name}}", product.name) // substitui o nome, com o nome do produto
+          .replace("{{prod-price}}", product.price); // substitui o preço, com o preço do produto
 
-        prodsSection.insertAdjacentHTML("beforeend", html);
+        prodsSection.insertAdjacentHTML("beforeend", html); // insere o html gerado no final da seção de produtos
       };
     }
 
+    // Função que carrega os produtos da API (arquvvo php nesse caso) de forma assíncrona
     async function loadProducts() {
 
       try {
-        let response = await fetch("more-products.php");
-        if (!response.ok) throw new Error(response.statusText);
-        var products = await response.json();
+        let response = await fetch("more-products.php"); // faz a requisição para a página php que retorna os produtos
+        if (!response.ok) throw new Error(response.statusText); // se a resposta não for ok, lança um erro
+        var products = await response.json(); // se a resposta for ok, pega os produtos da resposta
       }
-      catch (e) {
+      catch (e) { // se houver algum erro, mostra no console e retorna
         console.error(e);
         return;
       }
 
-      renderProducts(products);
+      renderProducts(products); // chama a função de renderização passando os produtos
     }
 
-    window.onload = function () {
+    window.onload = function () { // quando a página carregar, chama a função de carregar produtos
       loadProducts();
     }
 
-    window.onscroll = function () {
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        loadProducts();
+    window.onscroll = function () { // quando a página fizer scroll, verifica se chegou no final da página
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { // se chegou no final da página
+        loadProducts(); // chama a função de carregar produtos
       }
     };
 
