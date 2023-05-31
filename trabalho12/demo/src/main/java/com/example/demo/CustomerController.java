@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -26,12 +29,17 @@ public class CustomerController {
         return this.customers;
     }
 
-    public Customer getCustomerByCpf(String cpf) {
+    @GetMapping("/customers/{cpf}")
+    // retorna o primeiro customer encontrado com o cpf informado com uma resposta HTTP 200
+    // caso não encontre, retorna uma resposta HTTP 404
+    public ResponseEntity<Customer> getCustomerByCpf(@PathVariable String cpf) {
         for (Customer customer : this.customers) {
             if (customer.getCpf().equals(cpf)) {
-                return customer;
+                // return ResponseEntity.ok(customer);
+                return new ResponseEntity<Customer>(customer, HttpStatus.OK);
             }
         }
-        return null;
+        // return ResponseEntity.notFound().build();
+        return new ResponseEntity<Customer>(HttpStatus.NOT_FOUND);
     }
 }
