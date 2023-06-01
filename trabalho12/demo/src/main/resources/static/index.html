@@ -14,8 +14,17 @@
             border: 1px solid black;
             padding: 20px;
             border-radius: 5px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 576px) {
+            .form-container {
+                padding: 10px;
+            }
         }
     </style>
+
 </head>
 
 <body>
@@ -40,19 +49,82 @@
                         <label for="cidade" class="form-label">Cidade:</label>
                         <input type="text" class="form-control" id="cidade">
                     </div>
-                    <button type="button" class="btn btn-outline-dark col-12 mt-3">Buscar endereço pelo CEP
-                        (GET)</button>
-                    <button type="button" class="btn btn-outline-dark col-12 mt-2">Criar novo (POST)</button>
-                    <button type="button" class="btn btn-outline-dark col-12 mt-2">Apagar pelo CEP (DELETE)</button>
-                    <button type="button" class="btn btn-outline-dark col-12 mt-2">Listar todos endereços</button>
+                    <button type="button" class="btn btn-outline-dark col-12 mt-3" onclick="getAddressByCep()">
+                        Buscar endereço pelo CEP (GET)</button>
+                    <button type="button" class="btn btn-outline-dark col-12 mt-2" onclick="createNewAddress()">
+                        Criar novo (POST)</button>
+                    <button type="button" class="btn btn-outline-dark col-12 mt-2" onclick="deleteAddressByCep()">
+                        Apagar pelo CEP (DELETE)</button>
+                    <button type="button" class="btn btn-outline-dark col-12 mt-2" onclick="getAllAddresses()">
+                        Listar todos endereços</button>
                 </form>
             </div>
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        async function getAddressByCep() {
+            const cep = document.getElementById('cep').value;
+            const response = await fetch(`/address/${cep}`);
+            const address = await response.json();
+            if (response.ok) {
+                document.getElementById('rua').value = address.rua;
+                document.getElementById('bairro').value = address.bairro;
+                document.getElementById('cidade').value = address.cidade;
+            } else {
+                console.error('Falha ao buscar endereco:', response.status);
+            }
+        }
+
+        async function createNewAddress() {
+            const cep = document.getElementById('cep').value;
+            const rua = document.getElementById('rua').value;
+            const bairro = document.getElementById('bairro').value;
+            const cidade = document.getElementById('cidade').value;
+
+            const response = await fetch('/address', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    cep: cep,
+                    rua: rua,
+                    bairro: bairro,
+                    cidade: cidade
+                })
+            });
+
+            if (response.ok) {
+                console.log('Endereco criado com sucesso');
+            } else {
+                console.error('Falha ao criar endereco:', response.status);
+            }
+        }
+
+        async function deleteAddressByCep() {
+            const cep = document.getElementById('cep').value;
+            const response = await fetch(`/address/${cep}`, {
+                method: 'DELETE'
+            });
+
+            if (response.ok) {
+                console.log('Endereco deletado com sucesso');
+            } else {
+                console.error('Falha ao deletar endereco:', response.status);
+            }
+        }
+
+        async function getAllAddresses() {
+            const response = await fetch('/address');
+            const addresses = await response.json();
+            if (response.ok) {
+                console.log('Addresses:', addresses);
+            } else {
+                console.error('Falha ao buscar enderecos:', response.status);
+            }
+        }
+    </script>
 </body>
 
 </html>
