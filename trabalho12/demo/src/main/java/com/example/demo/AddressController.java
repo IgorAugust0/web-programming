@@ -14,11 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class AddressController {
-    // com localizações reais
     private final List<Address> addresses = new ArrayList<Address>(Arrays.asList(
-            new Address("12345-678", "Rua 1", "Bairro 1", "Cidade 1"),
-            new Address("12345-678", "Rua 2", "Bairro 2", "Cidade 2"),
-            new Address("12345-678", "Rua 3", "Bairro 3", "Cidade 3")));
+            new Address("38406-633", "Avenida Cesário Alvim", "Granja Marileusa", "Uberlândia"),
+            new Address("38406-389", "Rua Himalaia", "Mansões Aeroporto", "Uberlândia"),
+            new Address("38411-106", "Avenida Nicomedes Alves dos Santos", "Morada da Colina", "Uberlândia")));
 
     @GetMapping("/hello")
     public String helloWorld() {
