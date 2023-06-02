@@ -62,8 +62,8 @@
         </div>
         <div class="row mt-5">
             <div class="col-md-8 offset-md-2">
-                <h4>Endereços Cadastrados</h4>
-                <table class="table table-striped">
+                <h4 id="title" class="d-none">Endereços Cadastrados</h4>
+                <table class="table table-striped d-none">
                     <thead>
                         <tr>
                             <th>CEP</th>
@@ -98,6 +98,12 @@
             const bairro = document.getElementById('bairro').value;
             const cidade = document.getElementById('cidade').value;
 
+            if (!rua || !bairro || !cidade) {
+                console.error('Rua, bairro, and cidade are required fields.');
+                // Mostra uma mensagem de erro na tela
+                return;
+            }
+
             const response = await fetch('/address', {
                 method: 'POST',
                 headers: {
@@ -113,19 +119,27 @@
 
             if (response.ok) {
                 console.log('Endereco criado com sucesso');
+                // Limpa os campos do formulario
+                document.getElementById('rua').value = '';
+                document.getElementById('bairro').value = '';
+                document.getElementById('cidade').value = '';
             } else {
                 console.error('Falha ao criar endereco:', response.status);
             }
         }
-
+        
         async function deleteAddressByCep() {
             const cep = document.getElementById('cep').value;
             const response = await fetch(`/address/${cep}`, {
                 method: 'DELETE'
             });
-
+            
             if (response.ok) {
                 console.log('Endereco deletado com sucesso');
+                // Limpa os campos do formulario
+                document.getElementById('rua').value = '';
+                document.getElementById('bairro').value = '';
+                document.getElementById('cidade').value = '';
             } else {
                 console.error('Falha ao deletar endereco:', response.status);
             }
@@ -148,6 +162,12 @@
                     `;
                     addressListBody.appendChild(row);
                 });
+                // Mostra o titulo na tela
+                const title = document.getElementById('title');
+                title.classList.remove('d-none');
+                // Mostra a tabela na tela
+                const table = document.querySelector('.table');
+                table.classList.remove('d-none');
             } else {
                 console.error('Falha ao buscar enderecos:', response.status);
             }
