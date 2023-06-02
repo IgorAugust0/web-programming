@@ -60,6 +60,22 @@
                 </form>
             </div>
         </div>
+        <div class="row mt-5">
+            <div class="col-md-8 offset-md-2">
+                <h4>Endereços Cadastrados</h4>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>CEP</th>
+                            <th>Rua</th>
+                            <th>Bairro</th>
+                            <th>Cidade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="addressListBody"></tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -119,7 +135,19 @@
             const response = await fetch('/address');
             const addresses = await response.json();
             if (response.ok) {
-                console.log('Addresses:', addresses);
+                const addressListBody = document.getElementById('addressListBody');
+                addressListBody.innerHTML = '';
+
+                addresses.forEach(address => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${address.cep}</td>
+                        <td>${address.rua}</td>
+                        <td>${address.bairro}</td>
+                        <td>${address.cidade}</td>
+                    `;
+                    addressListBody.appendChild(row);
+                });
             } else {
                 console.error('Falha ao buscar enderecos:', response.status);
             }
