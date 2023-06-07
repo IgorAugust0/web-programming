@@ -1,4 +1,4 @@
-# PPI
+# Programação para Internet
 
 Repositório com arquivos da disciplina de Programação para Internet (PPI) do curso de Sistemas de Informações da Universidade Federal de Uberlândia (UFU).
 
