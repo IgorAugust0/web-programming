@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 1</title>
+</head>
+
+<body>
+    <main>
+        <form action="cadastraVeiculo.php" method="post">
+            <div>
+                <label for="marca">Marca</label>
+                <input type="text" name="marca" id="marca">
+            </div>
+            <div>
+                <label for="modelo">Modelo</label>
+                <input type="text" name="modelo" id="modelo">
+            </div>
+            <div>
+                <label for="cor">Cor</label>
+                <input type="text" name="cor" id="cor">
+            </div>
+            <div>
+                <label for="dataDeFabricacao">Data de Fabrição</label>
+                <input type="date" id="dataDeFabricacao">
+            </div>
+            <div>
+                <label for="tipo">Tipo</label>
+                <select name="tipo" id="tipo">
+                    <option value="carro">Carro</option>
+                    <option value="moto">Moto</option>
+                    <option value="caminhao">Caminhão</option>
+                </select>
+            </div>
+            <fieldset>
+                <legend>Possui opcionais?</legend>
+                <div>
+                    <input type="checkbox" name="arCondicionado" id="arCondicionado" value="arCondicionado">
+                    <label for="arCondicionado">Ar Condicionado</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="centralMultimidia" id="centralMultimidia" value="centralMultimidia">
+                    <label for="centralMultimidia">Central Multimidia</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="gps" id="gps" value="gps">
+                    <label for="gps">Vidro Elétrico</label>
+                </div>
+            </fieldset>
+            <div>
+                <label for="descricao">Descrição</label>
+                <br>
+                <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+                <label for="foto">Foto</label>
+                <input type="file" accept="image/*" name="foto" id="foto">
+            </div>
+            <div>
+                <input type="submit" value="Cadastrar">
+            </div>
+
+        </form>
+    </main>
+
+</body>
+
+</html>
