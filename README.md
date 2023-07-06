@@ -9,7 +9,7 @@ Repositório com arquivos da disciplina de Programação para Internet (PPI) do 
 
 ## Trabalhos
 
-| Trabalho   | Conteúdo |  Descrição |
+|| Conteúdo |  Descrição |
 | :---------- | :--------- | :--------- |
 | [01](https://igoraugusto.me/PPI/trabalho01/) | [HTML](https://igoraugusto.me/PPI/files/aulas/PPI-Modulo1-HTML.pdf) |  [Introdução](https://igoraugusto.me/PPI/files/trabalhos/Trabalho01-HTML-Introducao.pdf) |
 | [02](https://igoraugusto.me/PPI/trabalho02/) | [HTML](https://igoraugusto.me/PPI/files/aulas/PPI-Modulo1-HTML.pdf) | [Elementos Semânticos e Formulários](https://igoraugusto.me/PPI/files/trabalhos/Trabalho02-HTML-layout-forms.pdf)  |
